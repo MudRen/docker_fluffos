@@ -4,12 +4,12 @@ Docker 镜像 : FluffOS v2019 的 Ubuntu 编译环境。
 
 ### 1. Build compile image
 
-创建为编译 fluffos 源码的 docker 镜像，请确定已经安装了 docker 1.12+ 和 git ，docker 安装可以参考以下教程：
+创建编译 fluffos 源码的 docker 镜像，请确定已经安装了 docker 1.12+ 和 git ，docker 安装可以参考以下教程：
 
 * [Windows Docker 安装](https://www.runoob.com/docker/windows-docker-install.html)
 * [MacOS Docker 安装](https://www.runoob.com/docker/macos-docker-install.html)
 
-> 以下命令可能需要 `su root` 或者 `sudo` ，假设我们在 `~` 目录下操作。真正操作时，记得将下面代码中 `~` 替换为相应的目录，即你新建 `docker` 目录位置的绝对路径。
+> 以下命令可能需要 `sudo` ，假设我们在 `~` 目录下操作，真正操作时，记得将下面代码中 `~` 替换为你新建 `docker` 目录位置的绝对路径。
 
 ```bash
 cd ~
@@ -74,7 +74,7 @@ $
 > 注意运行前修改运行时配置文件 config.ini 中 mudlib 目录位置
 
 ```bash
-cd docker
+cd ~/docker
 git clone https://github.com/oiuv/mud.git
 # 修改 mud 中 config.ini 配置文件：mudlib directory : /opt/docker/mud
 # 运行以下指令启动 mud (config.ini 中配置的端口为 3160，如果是其它 mud 请自己换成对应端口)
