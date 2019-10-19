@@ -2,11 +2,11 @@
 FROM ubuntu:latest
 
 RUN sed -i 's#archive.ubuntu.com#mirrors.aliyun.com#' /etc/apt/sources.list && \
-    apt update && \
-    apt install -y libevent-2.1-6 libjemalloc1 libmysqlclient20 libpcre3 libpq5 libsqlite3-0 libssl1.1 zlib1g libicu64 \
+    apt-get update && \
+    apt-get install -y libevent-2.1-6 libjemalloc1 libmysqlclient20 libpcre3 libpq5 libsqlite3-0 libssl1.1 zlib1g libicu64 \
         --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
-COPY bin/fluffos bin/libdriver.so /usr/bin/
+COPY bin/driver bin/portbind /usr/bin/
 
-ENTRYPOINT ["/usr/bin/fluffos"]
+ENTRYPOINT ["/usr/bin/driver"]
