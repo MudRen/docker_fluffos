@@ -15,7 +15,7 @@ Docker 镜像 : FluffOS v2019 的 Ubuntu 编译环境。
 cd ~
 mkdir docker
 cd docker
-git clone https://github.com/oiuv/docker_fluffos.git
+git clone https://github.com/MudRen/docker_fluffos.git
 cd docker_fluffos
 docker build -t fluffos_build ./build
 ```
