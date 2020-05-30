@@ -13,6 +13,5 @@ jobs:
         uses: actions/checkout@master
       - name: Build the Docker image
         uses: docker build -t fluffos_build ./build
-    steps:
       - name: fluffos
         uses: actions/fluffos/fluffos@master
