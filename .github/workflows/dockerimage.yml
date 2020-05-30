@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Build the Docker image
-      run: docker build ./build --file Dockerfile --tag my-image-name:$(date +%s) && docker images
+      - name: Check out repository
+        uses: actions/checkout@master
+      - name: Build the Docker image
+        uses: docker build -t fluffos_build ./build
+    steps:
+      - name: fluffos
+        uses: actions/fluffos/fluffos@master
