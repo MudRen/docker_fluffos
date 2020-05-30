@@ -14,4 +14,4 @@ jobs:
       - name: Build the Docker image
         uses: docker build -t fluffos_build ./build
       - name: fluffos
-        uses: actions/fluffos/fluffos@master
+        uses: fluffos/fluffos@master
