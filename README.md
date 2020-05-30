@@ -2,6 +2,12 @@
 
 Docker 镜像 : FluffOS v2019 的 Ubuntu 编译环境。
 
+请注意，如果你不想自己编译，可以直接使用以下指令使用镜像：
+
+    docker pull mudren/fluffos
+
+具体说明请查看：https://hub.docker.com/r/mudren/fluffos
+
 ### 1. Build compile image
 
 创建编译 fluffos 源码的 docker 镜像，请确定已经安装了 docker 1.12+ 和 git ，docker 安装可以参考以下教程：
@@ -77,10 +83,10 @@ $
 cd ~/docker
 git clone https://github.com/oiuv/mud.git
 # 修改 mud 中 config.ini 配置文件：mudlib directory : /opt/docker/mud
-# 运行以下指令启动 mud (config.ini 中配置的端口为 3160，如果是其它 mud 请自己换成对应端口)
-docker run -d --name mud -p 6666:3160 -v ~/docker/mud:/opt/docker/mud fluffos /opt/docker/mud/config.ini
+# 运行以下指令启动 mud (config.ini 中配置的端口为 6666，如果是其它 mud 请自己换成对应端口)
+docker run -d --name mud -p 6666:6666 -v ~/docker/mud:/opt/docker/mud fluffos /opt/docker/mud/config.ini
 ```
-成功后，输入 `docker ps` 指令可以看到 `0.0.0.0:6666->3160/tcp`，失败可以输入 `docker logs -f mud` 指令查看 log，也可以进一步查看 mudlib 的 debug.log (比如 `tail -f ~/docker/mud/log/debug.log`)。
+成功后，输入 `docker ps` 指令可以看到 `0.0.0.0:6666->6666/tcp`，失败可以输入 `docker logs -f mud` 指令查看 log，也可以进一步查看 mudlib 的 debug.log (比如 `tail -f ~/docker/mud/log/debug.log`)。
 
 > 游戏地址
 
@@ -88,3 +94,9 @@ docker run -d --name mud -p 6666:3160 -v ~/docker/mud:/opt/docker/mud fluffos /o
     127.0.0.1 6666
     # Windows
     192.168.99.100 6666
+
+> 游戏服务器管理
+
+    启动服务器：docker start mud
+    关闭服务器：docker stop mud  (推荐游戏中shutdown)
+    重启服务器：docker restart mud
