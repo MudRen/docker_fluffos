@@ -11,7 +11,3 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@master
-      - name: Build the Docker image
-        run: docker build -t fluffos_build ./build
-      # - name: fluffos
-        # uses: fluffos/fluffos@master
