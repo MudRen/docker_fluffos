@@ -12,7 +12,7 @@ if test $# -ne 0; then
             ;;
         "fluffos")
         echo "开始创建 Fluffos docker 镜像 fluffos/fluffos"
-        docker build -t fluffos/fluffos .
+        docker build -t fluffos/fluffos --no-cache .
             ;;
         *)
         echo "进入 fluffos/build docker 镜像"
